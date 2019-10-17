@@ -18,6 +18,7 @@ public class IsInterruptedDemo {
             Mythread1 mythread = new Mythread1();
             mythread.start();
             Thread.sleep(1000);
+            System.out.println("执行interrupt");
             mythread.interrupt();
             /*
             * isInterrupted判段的是Thread对象是否已经是终止状态，

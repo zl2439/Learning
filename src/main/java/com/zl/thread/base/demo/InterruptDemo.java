@@ -22,11 +22,12 @@ public class InterruptDemo {
             Mythread mythread = new Mythread();
             mythread.start();
 
-            Thread.sleep(3000);
+            Thread.sleep(1000);
             /*
             * 虽然在mythread实例上执行interrupt方法停止线程，该方法并不会直接终止一个线程
             * 该方法仅仅是在当前线程中打了一个停止标记，并不会真正的停止线程
             * */
+            System.out.println("执行interrupt");
             mythread.interrupt();
             /*
             * 两次结果都为false，因为虽然是是用mythread在调用，
@@ -38,13 +39,14 @@ public class InterruptDemo {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        System.out.println("end");
     }
 }
 
 class Mythread extends Thread {
     @Override
     public void run() {
-        for (int i = 0; i < 100000; i++) {
+        for (int i = 0; i < 300000; i++) {
             System.out.println("i = " + i);
         }
     }
