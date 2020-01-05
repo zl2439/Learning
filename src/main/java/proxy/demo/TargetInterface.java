@@ -1,10 +1,10 @@
 package proxy.demo;
 
 /**
- *
+ * 实体接口
  */
 public interface TargetInterface {
-    public void method();
-    public String method2();
-    public int method3(int x);
+    void method1();
+    String method2();
+    int method3(int x);
 }

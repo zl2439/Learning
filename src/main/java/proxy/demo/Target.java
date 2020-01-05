@@ -3,9 +3,9 @@ package proxy.demo;
 /**
  * 动态代理练习---目标对象
  */
-public class Target implements TargetInterface{
+public class Target implements TargetInterface {
     @Override
-    public void method() {
+    public void method1() {
         System.out.println("动态代理目标对象,方法1");
     }
 
