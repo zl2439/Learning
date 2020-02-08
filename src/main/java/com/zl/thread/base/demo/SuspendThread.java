@@ -45,6 +45,8 @@ public class SuspendThread {
                     DateFormat.getDateTimeInstance().format(System.currentTimeMillis()) +
                     ",i = " + myThread6.getI());
 
+            //唤醒线程，处于暂停的线程无法使用interrupt停止
+            myThread6.resume();
             //最后停止线程
             myThread6.interrupt();
 
@@ -71,6 +73,7 @@ class MyThread6 extends Thread {
         super.run();
         while (true) {
             if (isInterrupted()) {
+                System.out.println("当前线程以经被终止");
                 return;
             }
             i++;

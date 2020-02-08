@@ -10,12 +10,13 @@ package com.zl.thread.base.demo;
  * 只有当最后一个非守护进程结束时，守护进程才会随着JVM一起结束工作
  */
 public class DaemonDemo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         System.out.println("begin");
         MyThread8 myThread8 = new MyThread8();
         //设置为守护进程
         myThread8.setDaemon(true);
         myThread8.start();
+        Thread.sleep(1000);
         System.out.println("main结束之后，mythread线程也不再打印");
         System.out.println("end");
     }
