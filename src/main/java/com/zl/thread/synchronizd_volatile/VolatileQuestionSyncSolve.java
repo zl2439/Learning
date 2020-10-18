@@ -3,7 +3,7 @@ package com.zl.thread.synchronizd_volatile;
 /**
  * @Author: zl
  * @Date: Created in 2019/10/21
- * @Description: 解决同步死循环，通过将同步变成异步的方式解决
+ * @Description: 通过将同步变成异步的方式解决，来解决com.zl.thread.synchronizd_volatile.VolatileQuestion中同步死循环
  * 使用异步的方式可以解决同步造成的死循环，在一般情况下下面的代码不会问题，在主线程中可以使PrintStringSyncSolve停下来
  * <p>
  * 但是当JVM设置成server模式时，再次运行就会发现，在主线程中将isContinuePrint设置成false，
@@ -28,6 +28,7 @@ public class VolatileQuestionSyncSolve {
 }
 
 class PrintStringSyncSolve implements Runnable {
+    //使用volatile关键字修饰isContinuePrint变量
     private boolean isContinuePrint;
 
     public boolean isContinuePrint() {

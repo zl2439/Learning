@@ -6,7 +6,7 @@ package com.zl.thread.synchronizd_volatile;
  * @Description:
  *
  * synchronized锁重入
- * 在一个synchronized方法/块中调用本类中其他synchronized方法/时，是永远可以得到锁的
+ * 在一个synchronized方法/块中调用本类中其他synchronized方法/块时，是永远可以得到锁的
  * “可重入锁”的概念是，自己可以再次获得自己的内部锁，假如一个线程获得了某对象的锁，当其想再次获取该对象的锁时是可以获取的
  * 如果不可锁重入的话，就会造成死锁
  *
@@ -17,7 +17,7 @@ public class SynchronizedLockReentry {
         System.out.println("begin");
         Thread1 thread1 = new Thread1();
         thread1.start();
-        System.out.println("edn");
+        System.out.println("end");
     }
 
     public synchronized void service1(){

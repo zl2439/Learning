@@ -22,7 +22,7 @@ public class SynchronizedBlockByString {
         threadA3.setName("a3");
         ThreadB3 threadB3 = new ThreadB3();
         threadB3.setName("b3");
-        //将两个线程都启动，发信只有运行一个线程，另一个线程永远没有运行机会，这是因为两个线程中传入的都是"A"字符串，都是两个线程使用的是同一个锁
+        //将两个线程都启动，发现只有运行一个线程，另一个线程永远没有运行机会，这是因为两个线程中传入的都是"A"字符串，导致两个线程使用的是同一个锁
         threadA3.start();
         threadB3.start();
     }

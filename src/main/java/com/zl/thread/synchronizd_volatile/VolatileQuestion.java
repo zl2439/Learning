@@ -3,9 +3,7 @@ package com.zl.thread.synchronizd_volatile;
 /**
  * @Author: zl
  * @Date: Created in 2019/10/21
- * @Description:
- *
- * volatile关键字主要是使变量在多个线程中可见，只可以用于修饰变量
+ * @Description: volatile关键字主要是使变量在多个线程中可见，只可以用于修饰变量
  */
 public class VolatileQuestion {
     public static void main(String[] args) {
@@ -17,6 +15,7 @@ public class VolatileQuestion {
         /*
          * 将值赋值为false
          * 打印并不会停止，因为main线程一直在执行while死循环，导致不会执行赋值语句
+         * 可以通过多线程的方式解决同步死循环
          * */
         printString.setContinuePrint(false);
     }
