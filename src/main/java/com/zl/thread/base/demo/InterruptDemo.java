@@ -9,7 +9,7 @@ public class InterruptDemo {
 
     /**
      * java.lang.Thread#stop()方法可以停止一个线程，但是最好不要用，因为他是不安全的，并且已经是废弃的
-     * java.lang.Thread#interrupt()方法并不会终止一个线程
+     * java.lang.Thread#interrupt()非静态方法。方法并不会终止一个线程，仅仅是在当前线程中打了一个停止标记
      *
      *
      * java.lang.Thread#interrupted() 静态方法。测试 当前 线程是否已经中断，当前线程是指运行this.interrupted方法的线程
